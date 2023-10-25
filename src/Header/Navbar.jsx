@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const {user, logOut} = useContext(AuthContext);
 
-  const handleLogOut = () => {
+  const handleSignOut = () => {
     logOut()
     .then(() => console.log('Successfully logout'))
     .catch(error => console.error(error))
@@ -47,16 +47,38 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-              {
-                user ? <>
-                <span>{user.email}</span>
-                <a onClick={handleLogOut} className="btn btn-neutral">Sign out</a>
-                
-                </> 
-                : <Link to="/login">
-                <button className="btn btn-neutral">Login</button>
-                </Link>
-              }
+            {user.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  alt="User Icon"
+                  className="w-8 h-8 rounded-full"
+                />
+              ) : (
+                <img
+                  src="https://i.ibb.co/QmgzZ1N/Sample-User-Icon.png"
+                  alt="Default User Icon"
+                  className="w-8 h-8 rounded-full"
+                />
+              )}
+              <span className="text-sm mr-2 lg:text-lg text-gray-800">
+                {user.displayName || user.email}
+              </span>
+            </div>
+            <button
+              onClick={handleSignOut}
+              className="btn bg-black  text-white hover:bg-blue-100"
+            >
+              Log out
+            </button>
+          </>
+        ) : (
+          <Link to={'/login'}>
+            <button className="btn bg-black text-white hover:bg-blue-100">
+              Login
+            </button>
+          </Link>
+        )}
+        
                 
             </div>
         </div>
