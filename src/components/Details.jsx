@@ -19,7 +19,6 @@ const Details = () => {
                         <h2>{brand}</h2>
                         </div>
                         <p>{description}</p>
-                        
                         <div className='flex justify-between items-center m'>
                             <h2>Price: {price}</h2>
                             <button className="btn btn-primary">Add to Cart</button>
