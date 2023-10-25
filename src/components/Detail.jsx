@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Detail = ({detail}) => {
     const {_id, name, brand, category, price, description, photo, rating} = detail;
@@ -21,18 +22,7 @@ const Detail = ({detail}) => {
                         </div>
                     </div>
                     <div className="mb-10 ">
-                    <div className="btn-group space-x-8">
-                        <Link to={`/details/${_id}`}>
-                           <button className="btn btn-active ">Details</button>
-                        </Link>
-                        <Link to={`/updateProduct/${_id}`}>
-                           <button className="btn btn-neutral ">Edit</button>
-                        </Link>
-                        <button
-                         onClick={() => handleDelete(_id)} className="btn bg-orange-500">Delete</button>
-                    </div>
-                        
-                    </div>
+                    
                 </div>
             </div>
             

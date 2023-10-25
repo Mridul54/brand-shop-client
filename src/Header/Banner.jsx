@@ -2,10 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div data-aos="fade-left"
-        data-aos-anchor="#example-anchor"
-        data-aos-offset="500"
-        data-aos-duration="1500">
+        <div>
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/SrDjNzz/banner-1.jpg" className="w-full" />

@@ -23,7 +23,7 @@ const Products = ({product, brandProduct, setBrandProduct}) => {
             //     'success'
             //   )
 
-            fetch(`http://localhost:5000/product/${_id}`, {
+            fetch(`https://brand-shop-server-lik46dzel-mridul544564.vercel.app/product/${_id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -68,7 +68,7 @@ const Products = ({product, brandProduct, setBrandProduct}) => {
                            <button className="btn btn-active ">Details</button>
                         </Link>
                         <Link to={`/updateProduct/${_id}`}>
-                           <button className="btn btn-neutral ">Edit</button>
+                           <button className="btn btn-neutral ">Update</button>
                         </Link>
                         <button
                          onClick={() => handleDelete(_id)} className="btn bg-orange-500">Delete</button>
