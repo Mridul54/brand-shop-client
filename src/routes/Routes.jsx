@@ -5,13 +5,15 @@ import Home from "../components/Home";
 
 
 import Login from "../components/Login";
-import Register from "../components/Register";
+
 import BrandProduct from "../components/BrandProduct";
 import UpdateProducts from "../components/UpdateProducts";
 import Details from "../components/Details";
 import AddProduct from "../components/AddProduct";
-import Products from "../components/Products";
-import BrandCard from "../components/BrandCard";
+
+import MyCart from "../components/MyCart";
+import Registration from "../components/Registration";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -26,7 +28,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/addProduct",
-                element: <AddProduct></AddProduct>
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path: "/updateProduct/:id",
@@ -38,8 +40,8 @@ const routes = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: "/register",
-                element: <Register></Register>
+                path: "/registration",
+                element: <Registration></Registration>
             },
             {
                 path: "/brandProduct",
@@ -50,6 +52,10 @@ const routes = createBrowserRouter([
                 path: "/details/:id",
                 element: <Details></Details>,
                 loader: ({params}) => fetch(`https://brand-shop-server-lik46dzel-mridul544564.vercel.app/product/${params.id}`)
+            },
+            {
+                path: "/myCart",
+                element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
             }
             
         ]
